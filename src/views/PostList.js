@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import ClassListRows from './ClassListRows';
 
-export default class ClassList extends Component {
+export default class PostList extends Component {
     constructor(props){
         console.log('Component Constructed')
         super(props);
         this.state={
-            classmates: []
+            posts: []
         }
     }
     componentDidMount(){
         console.log('Component Mounted')
-        fetch(' https://kekambas-bs.herokuapp.com/kekambas')
+        fetch(`https://kekambas-bs.herokuapp.com/posts `)
         .then(res => res.json())
         .then(data =>{
            console.log(data)
             this.setState({
-                classmates: data
+                posts: data
             })
         })
     }
@@ -24,18 +24,19 @@ export default class ClassList extends Component {
       console.log('component Rendered')
     return (
         <div className="container">
-        <h1> Meet Kekambas-79!</h1>
+        <h3> Class Feed </h3>
         <table className='table table-dark table-striped'>
                 <thead>
                     <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Body</th>
+                    <th scope='col'> Date Created</th>
                     </tr>
                 </thead>
         <tbody>
 
-            {this.state.classmates.map((c, i)=> <ClassListRows classmate={c} key={i}/>)}
+            {this.state.classmates.map((p, i)=> <PostListRows post={c} key={i}/>)}
         </tbody>
         </table>
         

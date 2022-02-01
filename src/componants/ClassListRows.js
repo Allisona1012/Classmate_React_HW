@@ -3,14 +3,14 @@ import ClassList from './ClassList';
 
 export default class ClassListRows extends Component {
   render() {
+      const classmate= this.props.classmate
     return (
-        <tbody>
-        <tr>
-            <td>{ClassList.id}</td>
-            <td>{ClassList.first_name}</td>
-            <td>{ClassList.last_name}</td>
+        
+         <tr>
+             <th>{classmate.id}</th>
+            <td>{classmate.first_name}</td>
+            <td>{classmate.last_name}</td>
         </tr>
-        </tbody>
-    );
+    )
   }
 }

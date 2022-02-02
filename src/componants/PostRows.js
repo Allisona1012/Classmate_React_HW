@@ -6,7 +6,7 @@ export default class PostRows extends Component {
   return (
       
        <tr>
-           <th>{post.user.first_name}</th>
+           <td>{post.user.first_name}</td>
           <td>{post.title}</td>
           <td>{post.body}</td>
           <td>{post.date_created}</td>

@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import ClassListRows from './ClassListRows';
+import PostRows from '../componants/PostRows';
 
 export default class PostList extends Component {
     constructor(props){
         console.log('Component Constructed')
         super(props);
         this.state={
-            posts: []
+            post: []
         }
     }
     componentDidMount(){
         console.log('Component Mounted')
-        fetch(`https://kekambas-bs.herokuapp.com/posts `)
+        fetch(`https://kekambas-bs.herokuapp.com/posts.json`)
         .then(res => res.json())
         .then(data =>{
            console.log(data)
             this.setState({
-                posts: data
+                post: data
             })
         })
     }
@@ -28,7 +28,7 @@ export default class PostList extends Component {
         <table className='table table-dark table-striped'>
                 <thead>
                     <tr>
-                    <th scope="col">Id</th>
+                    <th scope="col">User</th>
                     <th scope="col">Title</th>
                     <th scope="col">Body</th>
                     <th scope='col'> Date Created</th>
@@ -36,7 +36,7 @@ export default class PostList extends Component {
                 </thead>
         <tbody>
 
-            {this.state.classmates.map((p, i)=> <PostListRows post={c} key={i}/>)}
+            {this.state.post.map((p, i)=> <PostRows posts={p} key={i}/>)}
         </tbody>
         </table>
         

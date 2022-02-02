@@ -12,7 +12,7 @@ export default class App extends Component {
       <Navbar/>
       <Routes>
       <Route path="/" element={<ClassList />}/>
-      <Route path="/posts" element={<PostList/>} />
+      <Route path="posts" element={<PostList/>} />
 
       </Routes>
       </>

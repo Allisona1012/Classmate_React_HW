@@ -11,7 +11,7 @@ export default class PostList extends Component {
     }
     componentDidMount(){
         console.log('Component Mounted')
-        fetch(`https://kekambas-bs.herokuapp.com/posts.json`)
+        fetch(`https://kekambas-bs.herokuapp.com/posts`)
         .then(res => res.json())
         .then(data =>{
            console.log(data)
@@ -36,7 +36,7 @@ export default class PostList extends Component {
                 </thead>
         <tbody>
 
-            {this.state.post.map((p, i)=> <PostRows posts={p} key={i}/>)}
+            {this.state.post.map((p, i)=> <PostRows post={p} key={i}/>)}
         </tbody>
         </table>
         

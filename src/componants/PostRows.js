@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 export default class PostRows extends Component {
-  render() {{
+  render() {
     const post= this.props.post
   return (
       
@@ -15,4 +15,4 @@ export default class PostRows extends Component {
 }
    
   }
-}
+
